@@ -82,7 +82,7 @@ class Content extends MY_Controller {
 	function update() {
 			
 		$this->content_model->update();
-		echo $this->lang->line('page_updates'); 
+		echo $this->lang->line('page_updated'); 
 	}
 	
 	// update field
