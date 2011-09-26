@@ -2,11 +2,12 @@
 
 #### Features:
 
-* Markdown syntax for page content
+* Markdown support for page content
 * Easy code integration & highlight
 * Video integration for screencast publishing
-* Auto-sized images in content
+* "Auto-sized" images in content
 * Multi-language support (English & Russian for now)
+* Extremely easy to setup and use
 
 #### TODO
 
