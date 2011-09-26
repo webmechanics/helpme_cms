@@ -11,6 +11,7 @@
 
 #### TODO
 
+* Refactor JS highlighting
 * Add simple file-manager
 
 Full documenttation will be available soon :)
