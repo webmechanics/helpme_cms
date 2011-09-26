@@ -4,8 +4,9 @@
 
 * Markdown syntax for page content
 * Easy code integration & highlight
+* Video integration for screencast publishing
 * Auto-sized images in content
-* Multi-language support (English & Rusian for now)
+* Multi-language support (English & Russian for now)
 
 #### TODO
 
