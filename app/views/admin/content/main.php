@@ -33,7 +33,7 @@ jQuery(document).ready(function() {
 	
 	$.jGrowl.defaults.position = 'center';
 	$.jGrowl.defaults.life = 800;
-	$.jGrowl.defaults.closerTemplate = '<div><?= $this->lang->line('close_all'); ?></div>';
+	$.jGrowl.defaults.closerTemplate = '<div><?= lang('close_all'); ?></div>';
 	
 	$(document).bind('cbox_closed', function(){
         $('.validation').hide();
@@ -52,7 +52,7 @@ jQuery(document).ready(function() {
 		"bProcessing": false,
 		"aaSorting": [[ 1, "asc" ]],
 		"sAjaxSource": '/admin/content/table/',
-		"oLanguage": {"sZeroRecords": "<?= $this->lang->line('nothing_found'); ?>","sProcessing": "<?= $this->lang->line('loading'); ?>","sSearch": ""},
+		"oLanguage": {"sZeroRecords": "<?= lang('nothing_found'); ?>","sProcessing": "<?= lang('loading'); ?>","sSearch": ""},
 		"aoColumns": [
 			{ "bVisible": false },
 			{ "bVisible": false },
@@ -67,7 +67,7 @@ jQuery(document).ready(function() {
 	
 	$('.trash').livequery('click', function() {
 	
-		if(confirm("<?= $this->lang->line('sure'); ?>")){
+		if(confirm("<?= lang('sure'); ?>")){
 	
 			var arr = $(this).attr('id').split("_");
 			
@@ -99,13 +99,13 @@ jQuery(document).ready(function() {
 		
 		if(ret == true) {
 	
-			$('#data_form #ok').attr('disabled','disabled').val('<?= $this->lang->line('wait'); ?>');
+			$('#data_form #ok').attr('disabled','disabled').val('<?= lang('wait'); ?>');
 			
 			$('#data_form').ajaxSubmit(function(data) { 
 				$.colorbox.close();
 				$.jGrowl(data);
 				objectsTable.fnReloadAjax();
-				$('#data_form #ok').removeAttr('disabled').val('<?= $this->lang->line('saved'); ?>');
+				$('#data_form #ok').removeAttr('disabled').val('<?= lang('saved'); ?>');
 			});
 			
 			return false;
@@ -131,7 +131,7 @@ jQuery(document).ready(function() {
 
 <div class="dp100">
 
-	<h2 class="pages_header"><?= $this->lang->line('pages'); ?> | <a href="/admin/content/form/" class="colorbox"><?= $this->lang->line('add_page'); ?></a></h2>
+	<h2 class="pages_header"><?= lang('pages'); ?> | <a href="/admin/content/form/" class="colorbox"><?= lang('add_page'); ?></a></h2>
 
 	<table id="objects_table" class="data_table">
 	 
@@ -139,10 +139,10 @@ jQuery(document).ready(function() {
 			<tr> 
 				<th></th>
 				<th></th>
-				<th title="<?= $this->lang->line('order_by_name'); ?>" class="header" align="left"><?= $this->lang->line('name'); ?></th>
-				<th title="<?= $this->lang->line('order_by_parent'); ?>" class="header" align="left"><?= $this->lang->line('parent'); ?></th>
-				<th title="<?= $this->lang->line('order_by_enabled'); ?>" class="header"></th>
-				<th title="<?= $this->lang->line('delete'); ?>" class="header"></th>
+				<th title="<?= lang('order_by_name'); ?>" class="header" align="left"><?= lang('name'); ?></th>
+				<th title="<?= lang('order_by_parent'); ?>" class="header" align="left"><?= lang('parent'); ?></th>
+				<th title="<?= lang('order_by_enabled'); ?>" class="header"></th>
+				<th title="<?= lang('delete'); ?>" class="header"></th>
 			</tr> 
 		</thead>
 

@@ -1,6 +1,6 @@
 <?php 
 
-$strings = array('<option value="0">'.$this->lang->line('none').'</option>');
+$strings = array('<option value="0">'.lang('none').'</option>');
 
 foreach ($table as $row) {
 

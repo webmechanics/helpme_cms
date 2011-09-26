@@ -42,7 +42,7 @@ $(document).ready(function() {
 	
 	$.jGrowl.defaults.position = 'center';
 	$.jGrowl.defaults.life = 800;
-	$.jGrowl.defaults.closerTemplate = '<div><?= $this->lang->line('close_all'); ?></div>';
+	$.jGrowl.defaults.closerTemplate = '<div><?= lang('close_all'); ?></div>';
 	
 	$(document).bind('cbox_closed', function(){
         $('.validation').hide();
@@ -57,12 +57,12 @@ $(document).ready(function() {
 		
 		if(ret == true) {
 	
-			$('#data_form #ok').attr('disabled','disabled').val('<?= $this->lang->line('wait'); ?>');
+			$('#data_form #ok').attr('disabled','disabled').val('<?= lang('wait'); ?>');
 			
 			$('#data_form').ajaxSubmit(function(data) { 
 				$.colorbox.close();
-				$.jGrowl("<?= $this->lang->line('data_saved'); ?>");
-				$('#data_form #ok').removeAttr('disabled').val('<?= $this->lang->line('saved'); ?>');
+				$.jGrowl("<?= lang('data_saved'); ?>");
+				$('#data_form #ok').removeAttr('disabled').val('<?= lang('saved'); ?>');
 			});
 			
 			return false;
@@ -77,7 +77,7 @@ $(document).ready(function() {
 	
 	$('#delete').click(function(){
 	
-		if(confirm("<?= $this->lang->line('sure'); ?>")){
+		if(confirm("<?= lang('sure'); ?>")){
 		
 			$.get($(this).attr('href'), function(data){
 				$.jGrowl(data);
@@ -140,16 +140,16 @@ $(document).ready(function() {
 			</ul>
 			
 			<form action="/search/" method="get" id="search">
-				<input type="search" placeholder="<?= $this->lang->line('search'); ?>…" name="str" autosave="str" results="5" />
+				<input type="search" placeholder="<?= lang('search'); ?>…" name="str" autosave="str" results="5" />
 				<input type="hidden" name="newsearch" value="true" />
 			</form>
 			
 			<?php if($this->session->userdata('email')) { ?>
 			
 			<ul id="edit">
-				<li><a href="/admin/content/form/" class="colorbox"><?= $this->lang->line('new'); ?></a></li>
-				<li><a href="/admin/content/edit/<?= $page->id ?>/" class="colorbox"><?= $this->lang->line('edit'); ?></a></li>
-				<li><a href="/admin/content/delete/<?= $page->id ?>/" id="delete"><?= $this->lang->line('delete'); ?></a></li>
+				<li><a href="/admin/content/form/" class="colorbox"><?= lang('new'); ?></a></li>
+				<li><a href="/admin/content/edit/<?= $page->id ?>/" class="colorbox"><?= lang('edit'); ?></a></li>
+				<li><a href="/admin/content/delete/<?= $page->id ?>/" id="delete"><?= lang('delete'); ?></a></li>
 			</ul>
 			
 			<?php } ?>
@@ -162,7 +162,7 @@ $(document).ready(function() {
 	
 		<div id="content">
 		
-			<div class="breadcrumbs"><a href="/"><?= $this->lang->line('home'); ?></a> — <?= $page->name ?></div>
+			<div class="breadcrumbs"><a href="/"><?= lang('home'); ?></a> — <?= $page->name ?></div>
 			
 			<h1><?= $page->name ?></h1>
 			
@@ -181,7 +181,7 @@ $(document).ready(function() {
 					$tagline = implode(" ", $tags);
 			?>
 			
-			<div id="tags"><?= $this->lang->line('keywords'); ?>: <?= $tagline ?></div>
+			<div id="tags"><?= lang('keywords'); ?>: <?= $tagline ?></div>
 			
 			<?php } ?>
 
@@ -192,7 +192,7 @@ $(document).ready(function() {
 	<div class="clear"></div>
 	
 	<div id="footer" class="dp20">&copy; webmechanics, 2011</div>
-	<div id="contacts" class="dp80"><?= $this->lang->line('still_have_a_questions'); ?> <a href="mailto:support@adfox.ru?subject=Вопрос по AdFox.ADV"><?= $this->lang->line('contact_us'); ?></a>.</div>
+	<div id="contacts" class="dp80"><?= lang('still_have_a_questions'); ?> <a href="mailto:support@adfox.ru?subject=Вопрос по AdFox.ADV"><?= lang('contact_us'); ?></a>.</div>
 
 </div>
 
