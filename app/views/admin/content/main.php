@@ -20,6 +20,7 @@
 <script type="text/javascript" src="/js/jquery.form.js"></script>
 <script type="text/javascript" src="/js/jquery.tools.js"></script>
 <script type="text/javascript" src="/js/jquery.tools.ru.js"></script>
+<script type="text/javascript" src="/js/jquery.tabby.js"></script>
 
 <script type="text/javascript">
 
@@ -37,6 +38,10 @@ jQuery(document).ready(function() {
 	
 	$(document).bind('cbox_closed', function(){
         $('.validation').hide();
+	});
+	
+	$("#body").livequery(function(){
+		$("#body").tabby();
 	});
 
 	// таблица

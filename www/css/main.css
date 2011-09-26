@@ -111,16 +111,11 @@ img {
 
 /* Классы для блоков контента */
 
-.code {
+pre {
 	margin-bottom: 18px;
-	padding: 12px;
-	padding-left: 18px;
+	padding: 18px !important;
 	border: solid 6px #F2F2F2;
 	background-color: #FFFFFF;
-}
-
-.code div {
-	padding-bottom: 6px;
 	overflow-x: auto;
 }
 

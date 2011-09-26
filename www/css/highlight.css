@@ -5,7 +5,7 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
 */
 
 code {
-  font-family: "Espresso Mono", "Lucida Sans Unicode", Monaco, sans-serif;
+  font-family: Monaco, "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
   font-size: 12px;
 }
 

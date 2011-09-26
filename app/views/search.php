@@ -24,6 +24,7 @@
 <script type="text/javascript" src="/js/jquery.tools.ru.js"></script>
 <script type="text/javascript" src="/js/jquery.ui.js"></script>
 <script type="text/javascript" src="/js/jquery.colorbox.js"></script>
+<script type="text/javascript" src="/js/jquery.tabby.js"></script>
 
 <script type="text/javascript">
 
@@ -41,6 +42,12 @@ $(document).ready(function() {
 	
 	$(document).bind('cbox_closed', function(){
         $('.validation').hide();
+	});
+	
+	// tab support
+	
+	$("#body").livequery(function(){
+		$("#body").tabby();
 	});
 	
 	// add & edit form

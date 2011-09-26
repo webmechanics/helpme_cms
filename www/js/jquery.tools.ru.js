@@ -31,7 +31,14 @@ $.tools.validator.fn("[type=digit]", { russian: "Неверный числово
 // сравнение паролей валидатором
 	
 $.tools.validator.fn("#password2", { russian: "Пароли не совпадают" } , function() { 
-	if($('#password').val() == $('#password2').val()){ return true; } else { return false; }
+	
+	if($('#password').val() == $('#password2').val()){ 
+		return true; 
+	} 
+	
+	else { 
+		return false; 
+	}
 });
 
 // показывать сообщения валидатора через jGrowl

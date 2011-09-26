@@ -12,12 +12,6 @@ function process($str) {
 	$from[] = '[video]';
 	$from[] = '[/video]';
 	
-	$from[] = '[js]';
-	$from[] = '[/js]';
-	
-	$from[] = '[php]';
-	$from[] = '[/php]';
-	
 	// на что меняем
 	
 	$to[] = '<div class="note">';
@@ -25,12 +19,6 @@ function process($str) {
 	
 	$to[] = '<div class="video">';
 	$to[] = '</div>';
-	
-	$to[] = '<div class="code"><div><pre><code><noscript>';
-	$to[] = '</noscript></code></pre></div></div>';
-	
-	$to[] = '<div class="code"><div><pre><code>';
-	$to[] = '</code></pre></div></div>';
 
 	return str_ireplace($from, $to, $str);
 }

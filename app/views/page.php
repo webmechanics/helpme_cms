@@ -17,7 +17,6 @@
 <script type="text/javascript" src="/js/jquery.js"></script>
 <script type="text/javascript" src="/js/jquery.colorbox.js"></script>
 <script type="text/javascript" src="/js/highlight.js"></script>
-<script type="text/javascript" src="/js/utils.js"></script>
 
 <?php if($this->session->userdata('email')) { ?>
 
@@ -29,6 +28,7 @@
 <script type="text/javascript" src="/js/jquery.tools.js"></script>
 <script type="text/javascript" src="/js/jquery.tools.ru.js"></script>
 <script type="text/javascript" src="/js/jquery.ui.js"></script>
+<script type="text/javascript" src="/js/jquery.tabby.js"></script>
 
 <script type="text/javascript">
 
@@ -46,6 +46,12 @@ $(document).ready(function() {
 	
 	$(document).bind('cbox_closed', function(){
         $('.validation').hide();
+	});
+	
+	// tab support
+	
+	$("#body").livequery(function(){
+		$("#body").tabby();
 	});
 	
 	// add & edit form
@@ -108,8 +114,6 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 	
-	$('code').each(function(i,e) { htmlspecialchars(e) });
-	$('noscript').each(function() { $(this).parent().html($(this).html()) });
 	$('code').each(function(i,e) { hljs.highlightBlock(e, '    ') });
 	$("a[title='colorbox']").colorbox();
 	
