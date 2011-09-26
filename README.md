@@ -2,13 +2,13 @@
 
 #### Features:
 
-Markdown syntax for page content
-Easy code integration & highlight
-Auto-sized images in content
-Multi-language support (English & Rusian for now)
+* Markdown syntax for page content
+* Easy code integration & highlight
+* Auto-sized images in content
+* Multi-language support (English & Rusian for now)
 
 #### TODO
 
-Add simple file-manager
+* Add simple file-manager
 
 Full documenttation will be available soon :)
