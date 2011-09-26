@@ -1,0 +1,54 @@
+html, body, div, p, h1, h2, h3, h4, h5, ol, ul, li {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.dp20, .dp25, .dp33, .dp40, .dp50, .dp60, .dp66, .dp75, .dp80, .dp100 {
+	float: left;
+	display: inline;
+}
+
+.dp20{
+	width: 20%;
+}
+
+.dp25{
+	width: 25%;
+}
+
+.dp33{
+	width: 33.33%;
+}
+
+.dp40{
+	width: 40%;
+}
+
+.dp50{
+	width: 50%;
+}
+
+.dp60{
+	width: 60%;
+}
+
+.dp66{
+	width: 66.66%;
+}
+
+.dp75{
+	width: 75%;
+}
+
+.dp80{
+	width: 80%;
+}
+
+.dp100{
+	width: 100%;
+}
+
+.clear{
+	clear: both;
+}
