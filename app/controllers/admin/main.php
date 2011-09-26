@@ -62,6 +62,7 @@ class Main extends MY_Controller {
 		$picture = file_get_contents(sprintf('http://www.gravatar.com/avatar/%s?s=%d&d=%s', $hash, $size, $default));
 		
 		header("Expires: Fri, 30 Oct 1998 14:19:41 GMT");
+		
 		echo $picture;
 	}
 	

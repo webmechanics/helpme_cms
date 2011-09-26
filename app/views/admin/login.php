@@ -16,7 +16,7 @@
 <div id="auth_form">
 	
     <form id="auth" name="auth" method="post" action="/admin/main/login/">
-        <label><?= $this->lang->line('login'); ?></label>
+        <label><?= $this->lang->line('email'); ?></label>
         <input type="text" name="email" id="email" />
         <label><?= $this->lang->line('password'); ?></label>
         <input type="password" name="password" id="password" />

@@ -11,6 +11,9 @@
 		<div class="dp25"><label for=""><?= $this->lang->line('keywords'); ?></label></div>
 		<div class="dp75"><input type="text" name="f[keywords]" id="keywords" value="<?php if(isset($row)) { echo $row->keywords; } ?>" /></div>
 		
+		<div class="dp25"><label for=""><?= $this->lang->line('description'); ?></label></div>
+		<div class="dp75"><input type="text" name="f[description]" id="description" value="<?php if(isset($row)) { echo $row->description; } ?>" /></div>
+		
 		<div class="dp100">
 		
 			<textarea name="f[content]" id="body"><?php if(isset($row)) { echo $row->content; } ?></textarea>

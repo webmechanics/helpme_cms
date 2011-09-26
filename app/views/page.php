@@ -6,6 +6,9 @@
 <meta charset="utf-8">
 <title><?= $page->name ?> — HelpMe CMS</title>
 
+<meta name="keywords" content="<?= $page->keywords ?>" />
+<meta name="description" content="<?= $page->description ?>" />
+
 <link href="/css/grid.css" rel="stylesheet" type="text/css" />
 <link href="/css/main.css" rel="stylesheet" type="text/css" />
 <link href="/css/highlight.css" rel="stylesheet" type="text/css" />
@@ -49,7 +52,7 @@ $(document).ready(function() {
 	
 	$('#data_form #ok').livequery('click',function() {
 	
-		var v = $("#data_form").validator({ lang: "russian", messageClass: "validation", offset: [0, -180] });
+		var v = $("#data_form").validator({ lang: "<?= $this->config->item('language'); ?>", messageClass: "validation", offset: [0, -180] });
 		ret = v.data("validator").checkValidity();
 		
 		if(ret == true) {

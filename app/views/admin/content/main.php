@@ -38,10 +38,6 @@ jQuery(document).ready(function() {
 	$(document).bind('cbox_closed', function(){
         $('.validation').hide();
 	});
-	
-	$('#logo').click(function(){
-		window.location = "/";
-	});
 
 	// таблица
 	
@@ -98,7 +94,7 @@ jQuery(document).ready(function() {
 	
 	$('#data_form #ok').livequery('click',function() {
 	
-		var v = $("#data_form").validator({ lang: "russian", messageClass: "validation", offset: [0, -180] });
+		var v = $("#data_form").validator({ lang: "<?= $this->config->item('language'); ?>", messageClass: "validation", offset: [0, -180] });
 		ret = v.data("validator").checkValidity();
 		
 		if(ret == true) {

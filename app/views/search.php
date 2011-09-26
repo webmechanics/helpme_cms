@@ -47,7 +47,7 @@ $(document).ready(function() {
 	
 	$('#data_form #ok').livequery('click',function() {
 	
-		var v = $("#data_form").validator({ lang: "russian", messageClass: "validation", offset: [0, -180] });
+		var v = $("#data_form").validator({ lang: "<?= $this->config->item('language'); ?>", messageClass: "validation", offset: [0, -180] });
 		ret = v.data("validator").checkValidity();
 		
 		if(ret == true) {
@@ -56,7 +56,7 @@ $(document).ready(function() {
 			
 			$('#data_form').ajaxSubmit(function(data) { 
 				$.colorbox.close();
-				alert("Данные изменены. Обновите страницу.");
+				$.jGrowl("<?= $this->lang->line('data_saved'); ?>");
 				$('#data_form #ok').removeAttr('disabled').val('<?= $this->lang->line('saved'); ?>');
 			});
 			

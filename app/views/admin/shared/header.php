@@ -1,6 +1,6 @@
 <?php $current = $this->uri->segment(2, 'content'); ?>
 
-<div class="dp25" id="logo">HelpMe CMS</div>
+<div class="dp25" id="logo"><a href="/" title="<?= $this->lang->line('goto_website'); ?>" target="_blank">HelpMe CMS</a></div>
 
 <div id="auth_info">
 	<p><?= $this->lang->line('user'); ?>: <strong><?php echo $this->session->userdata('email'); ?></strong></p>

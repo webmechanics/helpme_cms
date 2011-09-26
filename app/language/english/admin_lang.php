@@ -13,6 +13,7 @@ $lang['user'] = "User";
 $lang['logout'] = "Logout";
 $lang['pages'] = "Pages";
 $lang['users'] = "Users";
+$lang['goto_website'] = "Go to website…";
 
 // users page
 

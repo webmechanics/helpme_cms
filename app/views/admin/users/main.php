@@ -38,16 +38,12 @@ jQuery(document).ready(function() {
 	$(document).bind('cbox_closed', function(){
         $('.validation').hide();
 	});
-	
-	$('#logo').click(function(){
-		window.location = "/";
-	});
 
 	// таблица
 	
 	var objectsTable;
 	
-	objectsTable = $('#object_table').dataTable( {
+	objectsTable = $('#objects_table').dataTable( {
 		"sPaginationType": "full_numbers",
 		"bStateSave": false,
 		"bInfo": false,
@@ -83,7 +79,7 @@ jQuery(document).ready(function() {
 	
 	$('#data_form #ok').livequery('click',function() {
 	
-		var v = $("#data_form").validator({ lang: "russian", messageClass: "validation", offset: [0, -180] });
+		var v = $("#data_form").validator({ lang: "<?= $this->config->item('language'); ?>", messageClass: "validation", offset: [0, -180] });
 		ret = v.data("validator").checkValidity();
 		
 		if(ret == true) {
@@ -122,23 +118,19 @@ jQuery(document).ready(function() {
 
 	<h2 class="users_header"><?= $this->lang->line('users'); ?> | <a href="/admin/users/form/" class="colorbox"><?= $this->lang->line('add_user'); ?>.</a></h2>
 	
-	<div id="object_table" class="data_table">
+	<table id="objects_table" class="data_table">
+	 
+		<thead> 
+			<tr> 
+				<th title="<?= $this->lang->line('order_by_email'); ?>" class="header" align="left"><?= $this->lang->line('email'); ?></th>
+				<th title="<?= $this->lang->line('order_by_name'); ?>" class="header" align="left"><?= $this->lang->line('name'); ?></th>
+				<th title="<?= $this->lang->line('delete'); ?>" class="header"></th>
+			</tr> 
+		</thead>
 
-		<table>
-		 
-			<thead> 
-				<tr> 
-					<th title="<?= $this->lang->line('order_by_email'); ?>" class="header" align="left"><?= $this->lang->line('email'); ?></th>
-					<th title="<?= $this->lang->line('order_by_name'); ?>" class="header" align="left"><?= $this->lang->line('name'); ?></th>
-					<th title="<?= $this->lang->line('delete'); ?>" class="header"></th>
-				</tr> 
-			</thead>
-
-			<tbody></tbody>
-				
-		</table>
-	
-	</div>
+		<tbody></tbody>
+			
+	</table>
 
 </div>
 
