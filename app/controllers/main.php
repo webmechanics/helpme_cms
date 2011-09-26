@@ -18,7 +18,13 @@ class Main extends MY_Controller {
 		$data['topics'] = $this->pages_model->topics();
 		$data['page'] = $this->pages_model->page($id);
 		
-		$this->load->view('page', $data);
+		if(is_object($data['page'])) {
+			$this->load->view('page', $data);
+		}
+		
+		else {
+			show_404();
+		}
 	}
 	
 	function search() {
