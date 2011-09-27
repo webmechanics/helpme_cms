@@ -12,5 +12,6 @@
 #### TODO
 
 * Add simple file-manager
+* Write complete documentation about installation & usage
 
 Full documenttation will be available soon :)
