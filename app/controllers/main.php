@@ -13,6 +13,7 @@ class Main extends MY_Controller {
 	function index() {
 	
 		$this->load->helper('markdown');
+
 		$id = $this->uri->segment(2,1);
 		
 		$data['topics'] = $this->pages_model->topics();

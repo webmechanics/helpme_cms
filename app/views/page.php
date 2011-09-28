@@ -170,7 +170,7 @@ $(document).ready(function() {
 			
 			<h1><?= $page->name ?></h1>
 			
-			<?= markdown(process($page->content)) ?>
+			<?= process(markdown($page->content)) ?>
 
 			<?php
 			
@@ -196,7 +196,7 @@ $(document).ready(function() {
 	<div class="clear"></div>
 	
 	<div id="footer" class="dp20">&copy; webmechanics, 2011</div>
-	<div id="contacts" class="dp80"><?= lang('still_have_a_questions'); ?> <a href="mailto:support@adfox.ru?subject=Вопрос по AdFox.ADV"><?= lang('contact_us'); ?></a>.</div>
+	<div id="contacts" class="dp80"><?= lang('still_have_a_questions'); ?> <a href="mailto:maxx@webmechanics.ru.ru?subject=HelpMe CMS"><?= lang('contact_us'); ?></a>.</div>
 
 </div>
 

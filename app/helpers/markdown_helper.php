@@ -8,14 +8,18 @@ function process($str) {
 
 	$from[] = '[note]';
 	$from[] = '[/note]';
+
+	$from[] = ' -- ';
 	
 	$from[] = '[video]';
 	$from[] = '[/video]';
 	
 	// на что меняем
 	
-	$to[] = '<div class="note">';
+	$to[] = '<div class="note" markdown="1">';
 	$to[] = '</div>';
+
+	$to[] = ' — ';
 	
 	$to[] = '<div class="video">';
 	$to[] = '</div>';
