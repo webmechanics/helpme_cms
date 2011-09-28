@@ -18,16 +18,16 @@ a {
 
 h1 {
   color: #FF6600;
-  font-size: 22px;
+  font-size: 26px;
   font-weight: normal;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 h2 {
   color: #666666;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: normal;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 p {
@@ -36,20 +36,12 @@ p {
     margin-bottom: 18px;
 }
 
-img {
-	margin-bottom: 18px;
-	padding: 12px;
-	border: solid 6px #F2F2F2;
-	background-color: #FFFFFF;
-	max-width: 96%; 
-	height: auto;
-}
-
 /* Основное поле */
 
 .main{
-	margin: 64px auto; 
+	margin: 60px auto; 
 	width: 86%;
+	min-width: 800px;
 }
 
 /* Блок навигации */
@@ -94,6 +86,10 @@ img {
 	padding-top: 22px;
 }
 
+#str {
+	width:98%;
+}
+
 /* Контент */
 
 #content {
@@ -101,6 +97,7 @@ img {
 	border: solid 6px #DEDEDE;
 	background-color: #FFFFFF;
 	min-height: 600px;
+	font-size: 14px;
 }
 
 .breadcrumbs {
@@ -127,9 +124,19 @@ pre {
 	text-align: center;
 }
 
+#content img {
+	margin-bottom: 18px;
+	padding: 8px;
+	border: solid 6px #F2F2F2;
+	background-color: #FFFFFF;
+	max-width: 96%; 
+	height: auto;
+}
+
 #content ul, #content ol {
-  padding-top: 12px;
-  padding-bottom: 12px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	margin-left: 22px;
 }
 
 #content li {
@@ -139,13 +146,12 @@ pre {
 
 #content ul {
 	list-style: disc;
-	color: #999999;
+	color: #666666;
 }
 
 #content ol {
 	list-style: decimal;
-	color: #999999;
-	margin-left: 4px;
+	color: #666666;
 }
 
 .note {

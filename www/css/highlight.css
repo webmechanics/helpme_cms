@@ -5,8 +5,15 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
 */
 
 code {
-  font-family: Monaco, "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
-  font-size: 12px;
+	font-family: "Espresso Mono", Monaco, "Courier New", monospace;
+	font-size: 12px;
+	background-color: #DEDEDE;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+pre code {
+	background-color: #FFFFFF;
 }
 
 code,
