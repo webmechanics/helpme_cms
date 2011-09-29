@@ -5,8 +5,6 @@ class Main extends MY_Controller {
 	function __construct(){
 	
 		parent::__construct();
-		
-		$this->lang->load('admin');
 	}
 
 	function index(){
@@ -23,12 +21,10 @@ class Main extends MY_Controller {
 		
 		// смотрим есть ли в БД пользователь
 
-		$this->db->from('admins');
-		$this->db->where($credentials);
-		
+		$this->db->from('admins')->where($credentials);
 		$result = $this->db->count_all_results();
 		
-		//если есть - идем в компании
+		//если есть - идем в админку
 			
 		if($result == 1) {
 			

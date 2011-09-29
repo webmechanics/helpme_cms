@@ -10,12 +10,9 @@ class Search_model extends CI_Model {
 	// разделы сайта
 	
 	function search($str = "") {
-	
-		$str = '%'.$str.'%';
-		$str = $this->db->escape($str);
-	
-		$sql = sprintf("SELECT DISTINCT(id), name FROM help WHERE (name LIKE %s OR keywords LIKE %s OR content LIKE %s) AND enabled = 1", $str, $str, $str);
-		$query = $this->db->query($sql);
+		
+		$this->db->select('DISTINCT(`id`), name')->from('help')->like('name', $str)->or_like('keywords', $str)->or_like('content', $str)->where('enabled', 1)->order_by('name','asc');
+		$query = $this->db->get();
 		
 		return $query->result();
 	}

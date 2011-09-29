@@ -9,10 +9,10 @@ class Pages_model extends CI_Model {
     
 	// разделы сайта
 	
-	function topics() {
-	
-		$sql = 'SELECT id, name FROM help WHERE parent = 0 AND enabled = 1 ORDER BY priority';
-		$query = $this->db->query($sql);
+	function topics($parent = 0) {
+		
+		$this->db->select('id, name')->from('help')->where('parent', $parent)->where('enabled', 1)->order_by('priority','asc'); 
+		$query = $this->db->get();
 		
 		return $query->result();
 	}
@@ -21,8 +21,8 @@ class Pages_model extends CI_Model {
 	
 	function page($id) {
 	
-		$sql = sprintf('SELECT * FROM help WHERE id = %d', $id);
-		$query = $this->db->query($sql);
+		$this->db->select('*')->from('help')->where('id', $id); 
+		$query = $this->db->get();
 		
 		return $query->row();
 	}

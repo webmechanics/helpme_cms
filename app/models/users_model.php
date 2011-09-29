@@ -11,8 +11,8 @@ class Users_model extends CI_Model {
 	
 	function table() {
 	
-		$sql = 'SELECT * FROM admins';
-		$query = $this->db->query($sql);
+		$this->db->select('*')->from('admins')->order_by('name','asc');
+		$query = $this->db->get();
 		
 		return $query->result();
 	}
@@ -21,8 +21,8 @@ class Users_model extends CI_Model {
 	
 	function row($id) {
 	
-		$sql = sprintf('SELECT * FROM admins WHERE id = %d', $id);
-		$query = $this->db->query($sql);
+		$this->db->select('*')->from('admins')->where('id', $id); 
+		$query = $this->db->get();
 		
 		$result = $query->row();
 		
@@ -45,8 +45,7 @@ class Users_model extends CI_Model {
 	
 	function delete($id) {
 	
-		$this->db->where('id', $id);
-		$this->db->delete('admins'); 
+		$this->db->where('id', $id)->delete('admins'); 
 	}
 	
 	// обновить данные объекта
@@ -56,12 +55,10 @@ class Users_model extends CI_Model {
 		$input = $this->input->post('f');
 		$id = $this->input->post('id');
 		
-		$this->db->where('id', $id);
-		
 		$data = $this->process_data($input);
 
 		if(!empty($data)){
-			$this->db->update('admins', $data);
+			$this->db->where('id', $id)->update('admins', $data);
 		}
 	}
 		
@@ -72,15 +69,12 @@ class Users_model extends CI_Model {
 		$data = array();
 		
 		foreach($input as $key => $value) {
-		
-			if($value != "") {
-		
-				if($key == 'password') {
-					$value = sha1($value);
-				}
-				
-				$data[$key] = $value;
+
+			if($key == 'password') {
+				$value = sha1($value);
 			}
+			
+			$data[$key] = $value;
 		}
 		
 		return $data;

@@ -10,9 +10,9 @@ class Content_model extends CI_Model {
 	// таблица данных
 	
 	function table() {
-	
-		$sql = 'SELECT help.id, help.name, help.enabled, help.priority, t1.name AS parent FROM help LEFT JOIN help AS t1 ON help.parent = t1.id ORDER BY name';
-		$query = $this->db->query($sql);
+		
+		$this->db->select('help.id, help.name, help.enabled, help.priority, t1.name AS `parent`')->from('help')->join('help AS `t1`', 'help.parent = t1.id', 'left')->order_by('name','asc');
+		$query = $this->db->get();
 		
 		return $query->result();
 	}
@@ -21,8 +21,8 @@ class Content_model extends CI_Model {
 	
 	function dropdown() {
 	
-		$sql = 'SELECT id, name, parent FROM help ORDER BY name';
-		$query = $this->db->query($sql);
+		$this->db->select('id, name, parent')->from('help')->order_by('name','asc');
+		$query = $this->db->get();
 		
 		return $query->result();
 	}
@@ -31,8 +31,8 @@ class Content_model extends CI_Model {
 	
 	function row($id) {
 	
-		$sql = sprintf('SELECT * FROM help WHERE id = %d', $id);
-		$query = $this->db->query($sql);
+		$this->db->select('*')->from('help')->where('id', $id); 
+		$query = $this->db->get();
 		
 		$result = $query->row();
 		
@@ -49,14 +49,15 @@ class Content_model extends CI_Model {
 		if(!empty($data)){
 			$this->db->insert('help', $data);
 		}
+		
+		return $this->db->insert_id();
 	}
 	
 	// удалить объект
 	
 	function delete($id) {
 	
-		$this->db->where('id', $id);
-		$this->db->delete('help'); 
+		$this->db->where('id', $id)->delete('help');
 	}
 	
 	// обновить данные объекта
@@ -66,12 +67,10 @@ class Content_model extends CI_Model {
 		$input = $this->input->post('f');
 		$id = $this->input->post('id');
 		
-		$this->db->where('id', $id);
-		
 		$data = $this->process_data($input);
 
 		if(!empty($data)){
-			$this->db->update('help', $data);
+			$this->db->where('id', $id)->update('help', $data);
 		}
 	}
 	
@@ -83,12 +82,11 @@ class Content_model extends CI_Model {
 		$i = 1;
 		
 		foreach($rows as $row) {
-		
-			$this->db->where('id', $row);
+
 			$data['priority'] = $i;
 			
 			if(!empty($data)){
-				$this->db->update('help', $data);
+				$this->db->where('id', $row)->update('help', $data);
 			}
 			
 			$i++;
@@ -103,12 +101,11 @@ class Content_model extends CI_Model {
 		$value = $this->input->post('value');
 		
 		$id = $this->input->post('id');
-		$this->db->where('id', $id);
 		
 		$data[$name] = $value;
 
 		if(!empty($data)){
-			$this->db->update('help', $data);
+			$this->db->where('id', $id)->update('help', $data);
 		}
 	}
 	
@@ -120,14 +117,11 @@ class Content_model extends CI_Model {
 		
 		foreach($input as $key => $value) {
 		
-			if($value != "") {
-		
-				if($key == 'password') {
-					$value = sha1($value);
-				}
-				
-				$data[$key] = $value;
+			if($key == 'password') {
+				$value = sha1($value);
 			}
+				
+			$data[$key] = $value;
 		}
 		
 		return $data;

@@ -86,7 +86,9 @@ $(document).ready(function() {
 		if(confirm("<?= lang('sure'); ?>")){
 		
 			$.get($(this).attr('href'), function(data){
+			
 				$.jGrowl(data);
+				window.location = "/";
 			});
 		}
 		
