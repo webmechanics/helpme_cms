@@ -11,7 +11,7 @@
 
 #### TODO
 
-* Add simple file-manager
-* Write complete documentation about installation & usage
+* Add simple file-manager DONE
+* Write complete documentation about installation & usage IN PROCESS
 
 Full documenttation will be available soon :)
