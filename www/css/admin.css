@@ -66,6 +66,15 @@ h2 a {
 	margin-top: 12px;
 }
 
+.files_header {
+	padding-left: 36px;
+	background: url(/img/32_32/file.png) left center no-repeat;
+	color: #999999;
+	font-weight: normal;
+	font-size: 22px;
+	margin-top: 12px;
+}
+
 /* хидер */
 
 #logo {
@@ -210,6 +219,10 @@ h2 a {
 	cursor: pointer;
 	text-align: center;
 	width: 22px;
+}
+
+.right {
+	text-align: right;
 }
 
 .validation {

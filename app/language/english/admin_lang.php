@@ -13,6 +13,7 @@ $lang['user'] = "User";
 $lang['logout'] = "Logout";
 $lang['pages'] = "Pages";
 $lang['users'] = "Users";
+$lang['files'] = "Files";
 $lang['goto_website'] = "Go to website…";
 
 // users page
@@ -29,6 +30,18 @@ $lang['add_page'] = "Add page…";
 $lang['page_added'] = "Page added…";
 $lang['page_updated'] = "Page updated…";
 $lang['page_deleted'] = "Page deleted…";
+
+// files page
+
+$lang['add_file'] = "Add file…";
+$lang['file_added'] = "File uploaded…";
+$lang['upload_error'] = "Upload error…";
+$lang['upload_error'] = "File deletion error…";
+$lang['file_deleted'] = "File deleted…";
+$lang['link'] = "File URL";
+$lang['size'] = "File size";
+$lang['date'] = "Date modified";
+$lang['file'] = "File";
 
 // pages form
 
@@ -50,6 +63,9 @@ $lang['order_by_email'] = "Sort by e-mail…";
 $lang['order_by_name'] = "Sort by name…";
 $lang['order_by_parent'] = "Sort by parent…";
 $lang['order_by_enabled'] = "Sort by enabled…";
+$lang['order_by_link'] = "Sort by link URL…";
+$lang['order_by_size'] = "Sort by size…";
+$lang['order_by_date'] = "Sort by date…";
 $lang['delete'] = "Delete…";
 
 $lang['none'] = "None";

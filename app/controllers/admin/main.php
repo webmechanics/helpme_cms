@@ -5,6 +5,8 @@ class Main extends MY_Controller {
 	function __construct(){
 	
 		parent::__construct();
+		
+		$this->lang->load('admin');
 	}
 
 	function index(){

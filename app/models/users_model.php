@@ -70,11 +70,14 @@ class Users_model extends CI_Model {
 		
 		foreach($input as $key => $value) {
 
-			if($key == 'password') {
-				$value = sha1($value);
+			if($value != "") {
+
+				if($key == 'password') {
+					$value = sha1($value);
+				}
+
+				$data[$key] = $value;
 			}
-			
-			$data[$key] = $value;
 		}
 		
 		return $data;

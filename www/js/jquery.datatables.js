@@ -574,11 +574,11 @@ if(bInitHandedOff===false){_fnInitalise(oSettings)}})}})(jQuery);
 $.fn.dataTableExt.oApi.fnReloadAjax = function ( oSettings, sNewSource, fnCallback, bStandingRedraw )
 {
 	if ( typeof sNewSource != 'undefined' && sNewSource != null ){
-		oSettings.sAjaxSource = sNewSource + "?1=1&time=" + new Date().getTime();
+		oSettings.sAjaxSource = sNewSource + "?time=" + new Date().getTime();
 	}
 	
 	else {
-		oSettings.sAjaxSource = oSettings.sAjaxSource + "?1=1&time=" + new Date().getTime();
+		oSettings.sAjaxSource = oSettings.sAjaxSource + "?time=" + new Date().getTime();
 	}
 	
 	this.oApi._fnProcessingDisplay( oSettings, true );

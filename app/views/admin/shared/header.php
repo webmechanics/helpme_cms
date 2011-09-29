@@ -12,6 +12,7 @@
 <ul>
     <li<?php if($current == "content") { echo ' class="current"'; } ?>><a class="content" href="/admin/content/"><?= lang('pages'); ?></a></li>
     <li<?php if($current == "users") { echo ' class="current"'; } ?>><a class="users" href="/admin/users/"><?= lang('users'); ?></a></li>
+    <li<?php if($current == "files") { echo ' class="current"'; } ?>><a class="users" href="/admin/files/"><?= lang('files'); ?></a></li>
 </ul>
 
 </div>
