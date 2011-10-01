@@ -28,7 +28,7 @@ jQuery(document).ready(function() {
     // умолчания для colorbox и jgrowl
 	
 	$(".colorbox").livequery(function() {
-		$(".colorbox").colorbox();
+		$(".colorbox").colorbox({ maxWidth: '80%', maxHeight: '80%' });
 	});
 	
 	$.jGrowl.defaults.position = 'center';
